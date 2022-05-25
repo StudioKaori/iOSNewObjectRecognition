@@ -25,6 +25,7 @@
 		431EC430283CE336003E6A07 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		431EC438283E26C3003E6A07 /* STUDIO KAORI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STUDIO KAORI.png"; sourceTree = "<group>"; };
+		431EC43B283E2915003E6A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +58,11 @@
 		431EC421283CE231003E6A07 /* NewObjectRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				431EC43B283E2915003E6A07 /* Info.plist */,
 				431EC43A283E26C8003E6A07 /* images */,
 				431EC422283CE231003E6A07 /* NewObjectRecognitionApp.swift */,
 				431EC424283CE231003E6A07 /* ContentView.swift */,
-				431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */,
+				431EC43C283E296E003E6A07 /* Storyboards */,
 				431EC433283CE35B003E6A07 /* coreMLModels */,
 				431EC426283CE233003E6A07 /* Assets.xcassets */,
 				431EC428283CE233003E6A07 /* Preview Content */,
@@ -90,6 +92,14 @@
 				431EC438283E26C3003E6A07 /* STUDIO KAORI.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		431EC43C283E296E003E6A07 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +308,10 @@
 				DEVELOPMENT_TEAM = LW3THBZ2Y7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewObjectRecognition/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,9 +338,10 @@
 				DEVELOPMENT_TEAM = LW3THBZ2Y7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewObjectRecognition/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
