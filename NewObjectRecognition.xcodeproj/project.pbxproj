@@ -15,6 +15,7 @@
 		431EC437283E25E9003E6A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */; };
 		431EC439283E26C3003E6A07 /* STUDIO KAORI.png in Resources */ = {isa = PBXBuildFile; fileRef = 431EC438283E26C3003E6A07 /* STUDIO KAORI.png */; };
 		431EC43E283E2A2C003E6A07 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EC43D283E2A2C003E6A07 /* OnboardingView.swift */; };
+		431EC441283E2A61003E6A07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431EC440283E2A61003E6A07 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		431EC438283E26C3003E6A07 /* STUDIO KAORI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STUDIO KAORI.png"; sourceTree = "<group>"; };
 		431EC43B283E2915003E6A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		431EC43D283E2A2C003E6A07 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		431EC440283E2A61003E6A07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				431EC424283CE231003E6A07 /* ContentView.swift */,
 				431EC43D283E2A2C003E6A07 /* OnboardingView.swift */,
+				431EC440283E2A61003E6A07 /* HomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				431EC431283CE336003E6A07 /* MobileNetV2.mlmodel in Sources */,
 				431EC43E283E2A2C003E6A07 /* OnboardingView.swift in Sources */,
 				431EC425283CE231003E6A07 /* ContentView.swift in Sources */,
+				431EC441283E2A61003E6A07 /* HomeView.swift in Sources */,
 				431EC423283CE231003E6A07 /* NewObjectRecognitionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
