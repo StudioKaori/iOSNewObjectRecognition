@@ -12,6 +12,8 @@
 		431EC427283CE233003E6A07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431EC426283CE233003E6A07 /* Assets.xcassets */; };
 		431EC42A283CE233003E6A07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431EC429283CE233003E6A07 /* Preview Assets.xcassets */; };
 		431EC431283CE336003E6A07 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 431EC430283CE336003E6A07 /* MobileNetV2.mlmodel */; };
+		431EC437283E25E9003E6A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */; };
+		431EC439283E26C3003E6A07 /* STUDIO KAORI.png in Resources */ = {isa = PBXBuildFile; fileRef = 431EC438283E26C3003E6A07 /* STUDIO KAORI.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		431EC426283CE233003E6A07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		431EC429283CE233003E6A07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		431EC430283CE336003E6A07 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		431EC438283E26C3003E6A07 /* STUDIO KAORI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STUDIO KAORI.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,10 @@
 		431EC421283CE231003E6A07 /* NewObjectRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				431EC43A283E26C8003E6A07 /* images */,
 				431EC422283CE231003E6A07 /* NewObjectRecognitionApp.swift */,
 				431EC424283CE231003E6A07 /* ContentView.swift */,
+				431EC436283E25E9003E6A07 /* LaunchScreen.storyboard */,
 				431EC433283CE35B003E6A07 /* coreMLModels */,
 				431EC426283CE233003E6A07 /* Assets.xcassets */,
 				431EC428283CE233003E6A07 /* Preview Content */,
@@ -76,6 +82,14 @@
 				431EC430283CE336003E6A07 /* MobileNetV2.mlmodel */,
 			);
 			path = coreMLModels;
+			sourceTree = "<group>";
+		};
+		431EC43A283E26C8003E6A07 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				431EC438283E26C3003E6A07 /* STUDIO KAORI.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +150,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431EC437283E25E9003E6A07 /* LaunchScreen.storyboard in Resources */,
+				431EC439283E26C3003E6A07 /* STUDIO KAORI.png in Resources */,
 				431EC42A283CE233003E6A07 /* Preview Assets.xcassets in Resources */,
 				431EC427283CE233003E6A07 /* Assets.xcassets in Resources */,
 			);
