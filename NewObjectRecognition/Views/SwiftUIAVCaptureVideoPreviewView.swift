@@ -18,6 +18,8 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
     
     var captureSession: AVCaptureSession!
     
+    var resultLabel: UILabel!
+    
     func setModel() {
         
         // create instance, model property
@@ -52,6 +54,16 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
         
         self.layer.addSublayer(previewLayer)
         
+        
+        resultLabel = UILabel()
+        resultLabel.text = "Swift"
+        resultLabel.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        resultLabel.textColor = UIColor.red
+        resultLabel.backgroundColor = UIColor.blue
+        
+        self.addSubview(resultLabel)
+        
+        
         self.captureSession.startRunning()
     }
     
@@ -74,7 +86,7 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
         
         // Create image process request, pass model and result
         let request = VNCoreMLRequest(model: model) { //An image analysis request that uses a Core ML model to process images.
-
+            
             (request: VNRequest, error: Error?) in
             
             // Get results as VNClassificationObservation array
@@ -87,6 +99,10 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
             }
             
             print(displayText)
+            // Execute it in the main thread
+            DispatchQueue.main.async {
+                self.resultLabel.text = displayText
+            }
         }
         
         // Execute the request
