@@ -33,10 +33,12 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
         guard captureSession.canAddInput(videoInput) else { return }
         captureSession.addInput(videoInput)
         
-        let photoOutput = AVCapturePhotoOutput()
-        guard captureSession.canAddOutput(photoOutput) else { return }
-        captureSession.sessionPreset = .photo
-        captureSession.addOutput(photoOutput)
+        // Output settings
+        let output = AVCaptureVideoDataOutput()
+        output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoQueue")) // set delegate to receive the data every frame
+        if captureSession.canAddOutput(output) {
+            captureSession.addOutput(output)
+        }
         
         captureSession.commitConfiguration()
         
