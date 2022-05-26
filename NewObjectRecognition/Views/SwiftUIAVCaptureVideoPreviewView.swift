@@ -18,6 +18,12 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
     
     var captureSession: AVCaptureSession!
     
+    func setModel() {
+        
+        // create instance, model property
+        mlModel = try? VNCoreMLModel(for: MobileNetV2().model)
+    }
+    
     func setupSession() {
         captureSession = AVCaptureSession()
         captureSession.beginConfiguration()
@@ -52,6 +58,7 @@ struct SwiftUIAVCaptureVideoPreviewView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIAVCaptureVideoPreviewView {
         let view = UIAVCaptureVideoPreviewView()
+        view.setModel()
         view.setupSession()
         view.setupPreview()
         return view
