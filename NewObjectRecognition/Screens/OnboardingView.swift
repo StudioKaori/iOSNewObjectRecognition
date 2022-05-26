@@ -47,6 +47,10 @@ struct OnboardingView: View {
                     .multilineTextAlignment(.center)
                     .padding(20)
                 } //: header
+                .opacity(isAnimating ? 1 : 0)
+                .offset(y: isAnimating ? 0 : -40)
+                .animation(.easeOut(duration: 1), value: isAnimating)
+                
                 
                 // MARK: - center
                 
