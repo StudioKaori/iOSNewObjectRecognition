@@ -25,6 +25,32 @@ struct OnboardingView: View {
             // fullscreen bg
             Color("ColorBlue")
                 .ignoresSafeArea(.all, edges: .all)
+            
+            VStack {
+                // MARK: - header
+                Spacer()
+                
+                VStack(spacing: 0) {
+                    Text("WHAT'S THIS?")
+                        .font(.system(size: 44))
+                        .fontWeight(.heavy)
+                        .foregroundColor(.black)
+                    
+                    // for long text, wrap with 3 """
+                    Text("""
+                    Try Object Recognition by MobileNetV2 (coreML model)
+                    """)
+                    .font(.title3)
+                    .fontWeight(.light)
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
+                    .padding(20)
+                } //: header
+                
+                // MARK: - center
+                
+                // MARK: - footer
+            }
         }
     }
 }
