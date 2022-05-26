@@ -13,7 +13,15 @@ public class UIAVCaptureVideoPreviewView: UIView {
     var captureSession: AVCaptureSession!
 
     func setupSession() {
-
+        captureSession = AVCaptureSession()
+                captureSession.beginConfiguration()
+                guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        
+        guard let videoInput = try? AVCaptureDeviceInput(device: videoCaptureDevice) else { return }
+                guard captureSession.canAddInput(videoInput) else { return }
+                captureSession.addInput(videoInput)
+        
+        
     }
     
     func setupPreview() {
