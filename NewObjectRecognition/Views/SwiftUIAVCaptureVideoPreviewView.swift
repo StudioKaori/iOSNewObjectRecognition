@@ -9,7 +9,13 @@ import SwiftUI
 import AVFoundation
 import Vision
 
-public class UIAVCaptureVideoPreviewView: UIView {
+class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
+    // AVCaptureVideoDataOutputSampleBufferDelegate
+    // when you want to handle the video input every second, you will add the delegate
+    var recognitionInterval = 0 //Interval for object recognition
+    
+    var mlModel: VNCoreMLModel? // CoreML model
+    
     var captureSession: AVCaptureSession!
     
     func setupSession() {
@@ -42,15 +48,15 @@ public class UIAVCaptureVideoPreviewView: UIView {
     }
 }
 
-public struct SwiftUIAVCaptureVideoPreviewView: UIViewRepresentable {
+struct SwiftUIAVCaptureVideoPreviewView: UIViewRepresentable {
     
-    public func makeUIView(context: Context) -> UIAVCaptureVideoPreviewView {
+    func makeUIView(context: Context) -> UIAVCaptureVideoPreviewView {
         let view = UIAVCaptureVideoPreviewView()
         view.setupSession()
         view.setupPreview()
         return view
     }
     
-    public func updateUIView(_ uiView: UIAVCaptureVideoPreviewView, context: Context) {
+    func updateUIView(_ uiView: UIAVCaptureVideoPreviewView, context: Context) {
     }
 }
