@@ -15,9 +15,17 @@ struct OnboardingView: View {
     
     // slide button width will be always the screen width - 80(40 padding for each)
     @State private var slideButtonWidth: Double = UIScreen.main.bounds.width - 80
+    // this value will be constantly changed while the button is dragged.
     @State private var slideButtonOffset: CGFloat = 0
+    
+    private var circleButtonWidth: CGFloat = 80
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            // fullscreen bg
+            Color("ColorBlue")
+                .ignoresSafeArea(.all, edges: .all)
+        }
     }
 }
 
