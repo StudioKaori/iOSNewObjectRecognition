@@ -21,10 +21,12 @@ public class UIAVCaptureVideoPreviewView: UIView {
                 guard captureSession.canAddInput(videoInput) else { return }
                 captureSession.addInput(videoInput)
         
-        et photoOutput = AVCapturePhotoOutput()
+        let photoOutput = AVCapturePhotoOutput()
                 guard captureSession.canAddOutput(photoOutput) else { return }
                 captureSession.sessionPreset = .photo
                 captureSession.addOutput(photoOutput)
+        
+        captureSession.commitConfiguration()
         
     }
     
