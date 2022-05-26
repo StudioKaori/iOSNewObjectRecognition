@@ -15,6 +15,7 @@ struct HomeView: View {
         VStack {
             
             SwiftUIAVCaptureVideoPreviewView()
+                .ignoresSafeArea(.all, edges: .all)
             
             Button(action: {
                 isOnboardingViewActive = true
