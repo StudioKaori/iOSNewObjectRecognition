@@ -11,32 +11,39 @@ import Vision
 
 public class UIAVCaptureVideoPreviewView: UIView {
     var captureSession: AVCaptureSession!
-
+    
     func setupSession() {
         captureSession = AVCaptureSession()
-                captureSession.beginConfiguration()
-                guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        captureSession.beginConfiguration()
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
         
         guard let videoInput = try? AVCaptureDeviceInput(device: videoCaptureDevice) else { return }
-                guard captureSession.canAddInput(videoInput) else { return }
-                captureSession.addInput(videoInput)
+        guard captureSession.canAddInput(videoInput) else { return }
+        captureSession.addInput(videoInput)
         
         let photoOutput = AVCapturePhotoOutput()
-                guard captureSession.canAddOutput(photoOutput) else { return }
-                captureSession.sessionPreset = .photo
-                captureSession.addOutput(photoOutput)
+        guard captureSession.canAddOutput(photoOutput) else { return }
+        captureSession.sessionPreset = .photo
+        captureSession.addOutput(photoOutput)
         
         captureSession.commitConfiguration()
         
     }
     
     func setupPreview() {
-
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        
+        let previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+        previewLayer.frame = self.frame
+        
+        self.layer.addSublayer(previewLayer)
+        
+        self.captureSession.startRunning()
     }
 }
 
 public struct SwiftUIAVCaptureVideoPreviewView: UIViewRepresentable {
-
+    
     public func makeUIView(context: Context) -> UIAVCaptureVideoPreviewView {
         let view = UIAVCaptureVideoPreviewView()
         view.setupSession()
