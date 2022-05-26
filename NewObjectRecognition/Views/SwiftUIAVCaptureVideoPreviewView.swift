@@ -54,6 +54,44 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
         
         self.captureSession.startRunning()
     }
+    
+    // caputureOutput will be called for each frame was written
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        // Recognise the object every 20 frames
+        if recognitionInterval < 20 {
+            recognitionInterval += 1
+            return
+        }
+        recognitionInterval = 0
+        
+        
+        // Convert CMSampleBuffer(an object holding media data) to CMSampleBufferGetImageBuffer
+        guard
+            let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer),
+            let model = mlModel // Unwrap the mlModel
+        else { return }
+        
+        // Create image process request, pass model and result
+        let request = VNCoreMLRequest(model: model) { //An image analysis request that uses a Core ML model to process images.
+
+            (request: VNRequest, error: Error?) in
+            
+            // Get results as VNClassificationObservation array
+            guard let results = request.results as? [VNClassificationObservation] else { return }
+            
+            // top 5 results
+            var displayText = ""
+            for result in results.prefix(5) {
+                displayText += "\(Int(result.confidence * 100))%" + result.identifier + "\n"
+            }
+            
+            print(displayText)
+        }
+        
+        // Execute the request
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+    }
 }
 
 struct SwiftUIAVCaptureVideoPreviewView: UIViewRepresentable {
