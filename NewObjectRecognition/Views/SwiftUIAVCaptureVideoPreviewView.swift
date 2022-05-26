@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import AVFoundation
+import Vision
 
-struct SwiftUIAVCaptureVideoPreviewView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public class UIAVCaptureVideoPreviewView: UIView {
+    var captureSession: AVCaptureSession!
+
+    func setupSession() {
+
+    }
+    
+    func setupPreview() {
+
     }
 }
 
-struct SwiftUIAVCaptureVideoPreviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwiftUIAVCaptureVideoPreviewView()
+public struct SwiftUIAVCaptureVideoPreviewView: UIViewRepresentable {
+
+    public func makeUIView(context: Context) -> UIAVCaptureVideoPreviewView {
+        let view = UIAVCaptureVideoPreviewView()
+        view.setupSession()
+        view.setupPreview()
+        return view
+    }
+    
+    public func updateUIView(_ uiView: UIAVCaptureVideoPreviewView, context: Context) {
     }
 }
