@@ -49,6 +49,17 @@ struct OnboardingView: View {
                 
                 // MARK: - center
                 
+                ZStack{
+                    Image("OnboardingHero")
+                        .resizable()
+                        .scaledToFit()
+                    
+                    //CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
+                    
+                } //: center
+                
+                Spacer()
+                
                 // MARK: - footer
             }
         }
