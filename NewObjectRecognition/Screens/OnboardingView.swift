@@ -58,6 +58,8 @@ struct OnboardingView: View {
                     Image("OnboardingHero")
                         .resizable()
                         .scaledToFit()
+                        .opacity(isAnimating ? 1 : 0)
+                        .animation(.easeInOut(duration: 1), value: isAnimating)
                     
                     //CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
                     
