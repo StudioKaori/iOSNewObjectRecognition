@@ -45,7 +45,9 @@ struct OnboardingView: View {
                     .fontWeight(.light)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
-                    .padding(10)
+                    .padding(EdgeInsets(
+                        top: 10, leading: 20, bottom: 0, trailing: 20
+                    ))
                 } //: header
                 .opacity(isAnimating ? 1 : 0)
                 .offset(y: isAnimating ? 0 : -40)
@@ -125,13 +127,15 @@ struct OnboardingView: View {
                                     }
                                 }
                                 .onEnded { _ in
-                                    if slideButtonOffset > slideButtonWidth / 2 {
-                                        // when the button is in the right than half, move to the home screen
-                                        slideButtonOffset = slideButtonWidth - circleButtonWidth
-                                        isOnboardingViewActive = false
-                                    } else {
-                                        // the button is in the left than the half, back to the default position
-                                        slideButtonOffset = 0
+                                    withAnimation(Animation.easeInOut(duration: 0.4)) {
+                                        if slideButtonOffset > slideButtonWidth / 2 {
+                                            // when the button is in the right than half, move to the home screen
+                                            slideButtonOffset = slideButtonWidth - circleButtonWidth
+                                            isOnboardingViewActive = false
+                                        } else {
+                                            // the button is in the left than the half, back to the default position
+                                            slideButtonOffset = 0
+                                        }
                                     }
                                     
                                 }
