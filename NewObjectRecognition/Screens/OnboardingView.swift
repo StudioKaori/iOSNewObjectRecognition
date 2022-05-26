@@ -45,7 +45,7 @@ struct OnboardingView: View {
                     .fontWeight(.light)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
-                    .padding(20)
+                    .padding(10)
                 } //: header
                 .opacity(isAnimating ? 1 : 0)
                 .offset(y: isAnimating ? 0 : -40)
