@@ -17,6 +17,7 @@ struct OnboardingView: View {
     @State private var slideButtonWidth: Double = UIScreen.main.bounds.width - 80
     // this value will be constantly changed while the button is dragged.
     @State private var slideButtonOffset: CGFloat = 0
+    @State private var isAnimating: Bool = false
     
     private var circleButtonWidth: CGFloat = 80
     
@@ -140,6 +141,9 @@ struct OnboardingView: View {
                 .padding()
             } //: VSTACK
         } //: ZSTACK
+        .onAppear(perform: {
+            isAnimating = true
+        })
     }
 }
 
