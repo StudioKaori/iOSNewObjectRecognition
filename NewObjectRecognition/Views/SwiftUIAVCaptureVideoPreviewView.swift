@@ -57,10 +57,11 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
         
         resultLabel = UILabel()
         resultLabel.text = ""
-        resultLabel.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width, height: 80)
+        resultLabel.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 200, width: UIScreen.main.bounds.width, height: 80)
         resultLabel.textColor = UIColor.black
         resultLabel.textAlignment = NSTextAlignment.center
-        resultLabel.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.6)
+        resultLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+        resultLabel.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.7)
         
         self.addSubview(resultLabel)
         
