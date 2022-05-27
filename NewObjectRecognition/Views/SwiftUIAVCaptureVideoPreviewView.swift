@@ -69,7 +69,7 @@ class UIAVCaptureVideoPreviewView: UIView, AVCaptureVideoDataOutputSampleBufferD
         self.captureSession.startRunning()
     }
     
-    // caputureOutput will be called for each frame was written
+    // captureOutput will be called for each frame was written
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         // Recognise the object every 20 frames
